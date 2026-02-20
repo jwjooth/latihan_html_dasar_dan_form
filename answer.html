@@ -138,5 +138,122 @@
 </table>
 
 <!-- soal 18 -->
-<figure></figure>
-<figcaption></figcaption>
+<figure>
+  <img src="grafik.jpg" alt="Grafik" />
+  <figcaption>Grafik Penjualan 2025</figcaption>
+</figure>
+<br /><br />
+
+<!-- soal 19 -->
+<details>
+  <summary>Baca Syarat</summary>
+  <p>Anda harus patuh aturan</p>
+</details>
+<br /><br />
+
+<!-- soal 20 -->
+<form action="/submit-profile" method="post">
+  <button type="submit">pencet aku</button>
+</form>
+<br /><br />
+
+<!-- soal 21 -->
+<label for="soal_21">Klik Saya</label>
+<input type="text" name="soal_21" id="soal_21" />
+<br /><br />
+
+<!-- soal 22 -->
+<input type="radio" name="soal_22" id="kartu_kredit" />
+<label for="kartu_kredit">Kartu Kredit</label>
+<input type="radio" name="soal_22" id="transfer_bank" />
+<label for="transfer_bank">Transfer Bank</label>
+<input type="radio" name="soal_22" id="e-wallet" />
+<label for="e-wallet">E-Wallet</label>
+<br /><br />
+
+<!-- soal 23 -->
+<form action="#">
+  <label for="email">Email: </label>
+  <input
+    type="email"
+    name="email"
+    id="email"
+    required="Please fill out this field"
+  /><br />
+  <button type="submit" id="email" name="email">Submit Email</button>
+</form>
+<br /><br />
+
+<!-- soal 24 -->
+<label for="tiket">Pemesanan Tiket: </label>
+<input type="date" name="tiket" id="tiket" max="2026-05-31" min="2026-05-01" />
+<br /><br />
+
+<!-- soal 25 -->
+<form action="" enctype="multipart/form-data" method="post">
+  <input type="file" id="soal_25" name="soal_25" /><br />
+  <button type="submit" id="soal_25" name="soal_25">Submit</button>
+</form>
+<br /><br />
+
+<!-- soal 26 -->
+<label for="soal_26">Asal Sekolah: </label>
+<input list="sekolah" id="soal_26" name="soal_26" />
+
+<datalist id="sekolah">
+  <option value="SDN 1" id="soal_26">SDN 001</option>
+  <option value="SMP 2">SMP 002</option>
+  <option value="SMA 3">SMA 003</option>
+</datalist>
+<br /><br />
+
+<!-- soal 27 -->
+<form action="" method="post">
+  <label for="hidden_input">Token ID: </label>
+  <input
+    type="text"
+    value="ABX123"
+    id="hidden_input"
+    name="hidden_input"
+    required
+  />
+  <button type="submit" id="hidden_input" name="hidden_input">Submit</button>
+</form>
+<br /><br />
+
+<!-- soal 28 -->
+<form action="">
+  <label for="phone">Phone Number: </label>
+  <input
+    type="tel"
+    pattern="^\d{11,13}$"
+    required
+    id="phone"
+    name="phone"
+  /><br />
+  <input type="submit" value="Submit" />
+</form>
+<br /><br />
+
+<!-- soal 29 -->
+<fieldset>
+  <legend>Informasi Detail</legend>
+  <label for="username">Username: </label>
+  <input type="text" id="username" name="username" /><br />
+  <label for="password">Password: </label>
+  <input type="password" id="password" name="password" /> <br />
+  <input type="submit" value="Submit" />
+</fieldset>
+<br /><br />
+
+<!-- soal 30 -->
+<label for="slider">Indikator: </label>
+<input
+  type="range"
+  value="50"
+  step="25"
+  id="slider"
+  name="slider"
+  min="0"
+  max="100"
+/>
