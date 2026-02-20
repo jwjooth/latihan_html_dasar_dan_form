@@ -1,728 +1,661 @@
-# UJIAN AKHIR
-## Mata Kuliah: HTML Dasar dan Form
+# 📋 Penilaian Objektif Ujian Akhir HTML Dasar dan Form
 
 | Keterangan | Detail |
 |---|---|
-| **Durasi** | 180 menit |
-| **Sifat** | Open Book & Open Internet |
-| **Format Jawaban** | File `.html` yang dapat dijalankan tanpa error di Web Browser |
+| **Mata Kuliah** | HTML Dasar dan Form |
+| **Total Soal** | 30 |
+| **Metode Penilaian** | Objektif per-soal berdasarkan spesifikasi, constraint, dan validitas HTML |
 
 ---
 
-## BAGIAN A — Dasar Markup & Hierarki Konten *(Easy to Medium)*
+## Rekap Nilai
+
+| Bagian | Soal | Nilai Diperoleh | Nilai Maks |
+|---|---|---|---|
+| A — Dasar Markup & Hierarki Konten | 1–10 | 84 | 100 |
+| B — Multimedia, Tabel & Semantik | 11–19 | 72 | 90 |
+| C — Lanjutan HTML Form & Input | 20–30 | 88 | 110 |
+| **TOTAL** | **30** | **244** | **300** |
+| **NILAI AKHIR (skala 100)** | | **81.3** | **100** |
 
 ---
 
-### Soal 1 — Struktur Dokumen HTML5
+## Detail Penilaian Per Soal
 
-**Deskripsi Kasus:**
-Konfigurasi kerangka dokumen utama merupakan hal esensial. Buat struktur dasar HTML5 yang mencakup tag root, meta charset, pengaturan viewport responsif, dan deklarasi favicon.
-
-**Spesifikasi Input:**
-- Teks judul tab: `"Ujian Akhir HTML"`
-- URL favicon lokal: `assets/logo.png`
-
-**Spesifikasi Output:**
-File HTML yang merender halaman kosong secara valid di browser tanpa peringatan *missing charset* atau *viewport* di console.
-
-**Constraint:**
-- Harus menggunakan tag HTML5 yang valid.
-- Favicon harus menggunakan atribut `rel` yang tepat.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Buka file di Chrome | Tab browser menampilkan teks `"Ujian Akhir HTML"` beserta logo ikon |
+### BAGIAN A — Dasar Markup & Hierarki Konten
 
 ---
 
-### Soal 2 — Hierarki Heading
+#### ✅ Soal 1 — Struktur Dokumen HTML5 `(10/10)`
 
-**Deskripsi Kasus:**
-Mesin pencari sangat memperhatikan hierarki Heading untuk memahami struktur dokumen. Implementasikan struktur heading berlapis untuk sebuah artikel blog.
-
-**Spesifikasi Input:**
-- Judul Utama: `"Belajar Pemrograman"`
-- Sub-Judul: `"Bahasa Web"`
-- Sub-Sub-Judul: `"HTML Dasar"`
-
-**Spesifikasi Output:**
-Rendering teks dengan ukuran menurun sesuai tingkatan prioritas semantik `H1`, `H2`, dan `H3`.
-
-**Constraint:**
-- Tidak boleh menggunakan tag kapitalisasi gaya lama seperti `<font>`.
-- `H1` hanya boleh berjumlah **satu** buah.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Teks mentah artikel | Judul utama memiliki cetak tebal dan ukuran terbesar secara bawaan browser |
-
----
-
-### Soal 3 — Pemformatan Teks Semantik
-
-**Deskripsi Kasus:**
-Pemformatan teks semantik (*Formatting*) digunakan untuk memberikan makna khusus pada kata tertentu di dalam paragraf, bukan sekadar gaya visual.
-
-**Spesifikasi Input:**
-```
-"Harga normal adalah 10.000, kini menjadi 5.000. H2O adalah rumus air."
+**Jawaban:**
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ujian Akhir HTML</title>
+    <link rel="icon" href="assets/logo.png" />
+  </head>
+  <body></body>
+</html>
 ```
 
-**Spesifikasi Output:**
-- Angka `10.000` → tercoret
-- Angka `5.000` → diberi garis bawah
-- Angka `2` pada `H2O` → berada di bawah garis teks (*subscript*)
-
-**Constraint:**
-- Dilarang menggunakan CSS.
-- Wajib menggunakan semantic formatting tags: `<del>`, `<ins>`, `<sub>`.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Teks plain string | Harga ~~10.000~~ <u>5.000</u>. H₂O |
+**Analisis:**
+- ✅ `<!DOCTYPE html>` deklarasi HTML5 hadir
+- ✅ `<meta charset="UTF-8">` mencegah *missing charset* warning
+- ✅ `<meta name="viewport" ...>` konfigurasi responsif benar
+- ✅ `<title>` sesuai spesifikasi: `"Ujian Akhir HTML"`
+- ✅ Favicon menggunakan `rel="icon"` dan path `assets/logo.png` tepat
+- ✅ Struktur `<html>`, `<head>`, `<body>` lengkap dan valid
 
 ---
 
-### Soal 4 — HTML Entities
+#### ✅ Soal 2 — Hierarki Heading `(10/10)`
 
-**Deskripsi Kasus:**
-Browser akan menerjemahkan karakter khusus `<` dan `>` sebagai pembuka/penutup tag. Selesaikan masalah ini menggunakan HTML Entities.
-
-**Spesifikasi Input:**
-```
-<h1>Selamat Datang</h1>
+**Jawaban:**
+```html
+<h1>Belajar Pemrograman</h1>
+<h2>Bahasa Web</h2>
+<h3>HTML Dasar</h3>
 ```
 
-**Spesifikasi Output:**
-Browser menampilkan teks persis seperti input, **bukan** mencetak teks `"Selamat Datang"` dengan gaya heading besar.
-
-**Constraint:**
-Gunakan Entity code yang tepat, bukan tag pembungkus biasa.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Pengembang mengetik sintaks HTML di dalam file HTML | Layar web menampilkan tulisan `<h1>Selamat Datang</h1>` |
+**Analisis:**
+- ✅ Urutan hierarki H1 → H2 → H3 benar secara semantik
+- ✅ Teks di setiap level sesuai spesifikasi
+- ✅ H1 hanya berjumlah satu (constraint terpenuhi)
+- ✅ Tidak menggunakan tag usang seperti `<font>`
 
 ---
 
-### Soal 5 — Blok Kode Preformatted
+#### ✅ Soal 3 — Pemformatan Teks Semantik `(10/10)`
 
-**Deskripsi Kasus:**
-Kode komputer harus ditampilkan apa adanya untuk mempertahankan spasi, indentasi, dan garis baru tanpa ternormalisasi oleh browser.
-
-**Spesifikasi Input:**
-```python
-def salam():
-    print("Halo")
+**Jawaban:**
+```html
+<p>
+  "Harga normal adalah <del>10.000</del>, kini menjadi <ins>5.000</ins>.
+  H<sub>2</sub>O adalah rumus air."
+</p>
 ```
 
-**Spesifikasi Output:**
-Blok teks yang mempertahankan jarak indentasi 4 spasi di depan kata `print`.
-
-**Constraint:**
-Wajib menggunakan *computer code tag* yang spesifik.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Tiga baris kode Python | Teks ter-render dengan font monospaced dan format indentasi terjaga |
+**Analisis:**
+- ✅ `<del>` untuk teks tercoret (`10.000`)
+- ✅ `<ins>` untuk garis bawah (`5.000`)
+- ✅ `<sub>` untuk subscript (`2` pada H₂O)
+- ✅ Tidak menggunakan CSS (constraint terpenuhi)
+- ✅ Teks konten sesuai spesifikasi
 
 ---
 
-### Soal 6 — Hyperlink Internal & Eksternal
+#### ✅ Soal 4 — HTML Entities `(10/10)`
 
-**Deskripsi Kasus:**
-Hyperlink dapat merujuk ke URL di luar maupun di dalam ekosistem domain saat ini.
+**Jawaban:**
+```html
+<p>&lt;h1&gt;Selamat Datang&lt;/h1&gt;</p>
+```
 
-**Spesifikasi Input:**
-- Link 1: menuju `https://niagahoster.co.id/` → buka di **tab baru**
-- Link 2: menuju file internal `kontak.html` → buka di **tab yang sama**
-
-**Spesifikasi Output:**
-Dua tautan biru bergaris bawah. Klik link pertama membuka tab baru, klik link kedua me-load di tab saat ini.
-
-**Constraint:**
-Gunakan format penulisan **Absolute URL** dan **Relative URL** yang tepat.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Tag `<a>` | Link 1 men-trigger pop-up tab baru |
+**Analisis:**
+- ✅ `&lt;` dan `&gt;` digunakan dengan benar untuk karakter `<` dan `>`
+- ✅ Browser akan menampilkan literal `<h1>Selamat Datang</h1>` tanpa merendernya sebagai heading
+- ✅ Menggunakan entity code, bukan tag pembungkus biasa
 
 ---
 
-### Soal 7 — Bookmark / Anchor Navigation
+#### ⚠️ Soal 5 — Blok Kode Preformatted `(8/10)`
 
-**Deskripsi Kasus:**
-Untuk halaman yang sangat panjang, diperlukan sistem navigasi lompat cepat menggunakan Bookmark.
+**Jawaban:**
+```html
+<pre>
+  <code style="font-family: monospace;">
+    def salam():
+        print("Halo")
+  </code>
+</pre>
+```
 
-**Spesifikasi Input:**
-- Menu tautan: `"Ke Bawah"`
-- Sebuah elemen `div` di baris ke-500 dengan identifier `"footer"`
+**Analisis:**
+- ✅ `<pre>` mempertahankan whitespace dan indentasi
+- ✅ `<code>` sebagai *computer code tag* yang spesifik sesuai constraint
+- ⚠️ Penambahan `style="font-family: monospace;"` redundan karena browser sudah menerapkan font monospaced secara default pada `<code>` yang berada di dalam `<pre>`. Meskipun soal tidak melarang CSS secara eksplisit, ini menunjukkan pemahaman yang kurang sempurna
+- ✅ Indentasi 4 spasi sebelum `print` terjaga
 
-**Spesifikasi Output:**
-Tautan di bagian atas web, ketika diklik, halaman otomatis menggulung ke elemen target di bawah.
-
-**Constraint:**
-Implementasikan atribut `id` dan `href` dengan prefix `#`.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Klik teks `"Ke Bawah"` | Layar browser bergeser langsung ke ID `"footer"` |
-
----
-
-### Soal 8 — Ordered List dengan Tipe Huruf
-
-**Deskripsi Kasus:**
-Daftar yang diurutkan dapat memodifikasi gaya numbering-nya tanpa campur tangan CSS.
-
-**Spesifikasi Input:**
-Daftar pemenang lomba: Budi, Andi, Siti.
-
-**Spesifikasi Output:**
-Urutan menggunakan format huruf kapital (A, B, C) bukan angka numerik.
-
-**Constraint:**
-Manipulasi atribut `type` pada tag `<ol>`.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| 3 buah list item | `A. Budi`, `B. Andi`, `C. Siti` |
+**Pengurangan:** -2 (redundansi CSS yang tidak perlu)
 
 ---
 
-### Soal 9 — Nested List
+#### ✅ Soal 6 — Hyperlink Internal & Eksternal `(10/10)`
 
-**Deskripsi Kasus:**
-Pengelompokan data logis dapat dilakukan melalui list bersarang.
+**Jawaban:**
+```html
+<a href="https://niagahoster.co.id/" target="_blank">buka di tab baru</a>
+<a href="kontak.html" target="_self">buka di tab yang sama</a>
+```
 
-**Spesifikasi Input:**
-- Kategori: `"Kendaraan"`
-- Sub-kategori (bullet): `"Mobil"` dan `"Motor"`
-
-**Spesifikasi Output:**
-Format list bullet utama berisi teks `"Kendaraan"`, dan di bawahnya terdapat indentasi untuk list bullet kedua.
-
-**Constraint:**
-Wajib menggunakan `<ol>` atau `<ul>` bersarang.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Induk list dan anak list | Render hierarki berjenjang bawaan dari browser |
+**Analisis:**
+- ✅ Absolute URL untuk link eksternal
+- ✅ Relative URL untuk link internal (`kontak.html`)
+- ✅ `target="_blank"` untuk tab baru
+- ✅ `target="_self"` untuk tab yang sama
 
 ---
 
-### Soal 10 — Block vs Inline Element
+#### ✅ Soal 7 — Bookmark / Anchor Navigation `(10/10)`
 
-**Deskripsi Kasus:**
-Layout visual dan pengelompokan tingkat tinggi dalam HTML membedakan perilaku *Block* dan *Inline*.
+**Jawaban:**
+```html
+<p><a href="#footer">Ke Bawah</a></p>
+<div id="footer">INI ADALAH DIV FOOTER</div>
+```
 
-**Spesifikasi Input:**
-Kalimat `"Harga Diskon"` di mana kata `"Diskon"` harus dapat diseleksi/ditarget tanpa memaksa baris baru.
-
-**Spesifikasi Output:**
-Kata `"Harga"` dan `"Diskon"` tetap berada di baris horizontal yang sama.
-
-**Constraint:**
-- Kata `"Diskon"` wajib dibungkus dalam tag yang bersifat **inline**.
-- Dilarang menggunakan tag *block*.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Dua kata dalam struktur DOM | Tidak terpotong ke bawah |
+**Analisis:**
+- ✅ `href="#footer"` menggunakan prefix `#` dengan benar
+- ✅ Elemen target memiliki `id="footer"` yang bersesuaian
+- ✅ Teks link sesuai spesifikasi: `"Ke Bawah"`
 
 ---
 
-## BAGIAN B — Multimedia, Tabel & Semantik *(Medium)*
+#### ✅ Soal 8 — Ordered List dengan Tipe Huruf `(10/10)`
+
+**Jawaban:**
+```html
+<ol type="A">
+  <li>Budi</li>
+  <li>Andi</li>
+  <li>Siti</li>
+</ol>
+```
+
+**Analisis:**
+- ✅ `type="A"` menghasilkan format huruf kapital (A, B, C)
+- ✅ Tiga item sesuai spesifikasi: Budi, Andi, Siti
+- ✅ Output akan menampilkan `A. Budi`, `B. Andi`, `C. Siti`
 
 ---
 
-### Soal 11 — Gambar Responsif
+#### ⚠️ Soal 9 — Nested List `(6/10)`
 
-**Deskripsi Kasus:**
-Gambar harus responsif terhadap viewport induknya secara relatif, serta memiliki kriteria aksesibilitas.
+**Jawaban:**
+```html
+<ul>
+  Kendaraan        <!-- ❌ teks langsung di dalam <ul> tanpa <li> -->
+  <ul>
+    <li>Mobil
+      <ul>
+        <li>Avanza</li>
+        ...
+      </ul>
+    </li>
+    ...
+  </ul>
+</ul>
+```
 
-**Spesifikasi Input:**
-- File gambar: `pemandangan.jpg`
-- Teks layar baca: `"Foto Pantai"`
+**Analisis:**
+- ✅ Struktur nested list terbentuk secara fungsional
+- ✅ Sub-sub list (Avanza, BYD, dll.) ter-wrap dengan `<li>` dan `<ul>` yang benar
+- ❌ **Invalid HTML**: Teks `"Kendaraan"` diletakkan langsung sebagai *text node* di dalam `<ul>` tanpa dibungkus `<li>`. Menurut spesifikasi HTML, konten langsung di dalam `<ul>` hanya boleh berupa elemen `<li>`. Ini menyebabkan DOM yang tidak valid dan perilaku render yang tidak konsisten antar browser
+- **Solusi benar:** `<li>Kendaraan</li>` sebagai parent item
 
-**Spesifikasi Output:**
-Gambar ditampilkan dengan lebar selalu memenuhi **setengah layar** browser.
-
-**Constraint:**
-- Gunakan properti persentase `%` pada lebar.
-- Lengkapi tag pelengkap teks disabilitas (`alt`).
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Ukuran browser diperkecil/di-resize | Gambar otomatis mengecil mengikuti lebar 50% |
-
----
-
-### Soal 12 — Responsive Image dengan `<picture>`
-
-**Deskripsi Kasus:**
-Optimalisasi load gambar berbasis ukuran layar (*Art Direction*) diselesaikan menggunakan tag `<picture>`.
-
-**Spesifikasi Input:**
-- Layar `< 500px` → memuat `kucing-kecil.png`
-- Layar standar → memuat `kucing-besar.png`
-
-**Spesifikasi Output:**
-Peramban cerdas merender file yang relevan sesuai media query.
-
-**Constraint:**
-- Gunakan sintaks `<source media="...">`.
-- Sediakan tag default gambar (fallback).
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Inspect element di mobile view | File `kucing-kecil.png` yang terunduh di network tab |
+**Pengurangan:** -4 (struktur HTML tidak valid pada elemen induk utama)
 
 ---
 
-### Soal 13 — Audio Multi-Format
+#### ❌ Soal 10 — Block vs Inline Element `(6/10)`
 
-**Deskripsi Kasus:**
-Memutar media audio yang kompatibel dengan multi-browser secara fallback.
+**Jawaban:**
+```html
+<p>Harga <diskon style="color: blue">Diskon</diskon></p>
+```
 
-**Spesifikasi Input:**
-File: `lagu.webm` dan `lagu.mp3`
+**Analisis:**
+- ✅ Secara visual kata "Harga" dan "Diskon" berada di baris yang sama
+- ❌ **Tag `<diskon>` adalah custom/unknown tag yang tidak valid dalam standar HTML5.** Browser memang me-render unknown tag sebagai inline element secara default, namun ini bukan tag HTML yang sah. Constraint secara jelas mewajibkan penggunaan tag inline yang **valid**
+- **Solusi benar:** Menggunakan `<span style="color: blue">Diskon</span>`, di mana `<span>` adalah representasi canonical tag inline di HTML
+- ✅ Kata "Diskon" tidak menyebabkan line break (efek visual tercapai, meski caranya salah)
 
-**Spesifikasi Output:**
-Pemutar audio yang dapat diputar-jeda oleh pengguna (memiliki UI tombol play).
-
-**Constraint:**
-- Tidak boleh auto-play.
-- Wajib mencantumkan lebih dari satu format *source*.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Tag audio dirender | UI Control bar suara muncul di browser |
+**Pengurangan:** -4 (tag tidak valid, tidak memenuhi standar HTML5)
 
 ---
 
-### Soal 14 — Video Autoplay Muted
-
-**Deskripsi Kasus:**
-Video yang di-embed membutuhkan serangkaian aturan UX spesifik.
-
-**Spesifikasi Input:**
-- URL: `trailer.mp4`
-- Ukuran lebar: `800px`
-
-**Spesifikasi Output:**
-Frame video muncul, langsung berputar otomatis saat halaman dimuat, namun dalam kondisi *mute* (tanpa suara).
-
-**Constraint:**
-Eksplorasi atribut boolean spesifik pada tag `<video>`.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Buka halaman | Video bergerak tanpa suara |
+### BAGIAN B — Multimedia, Tabel & Semantik
 
 ---
 
-### Soal 15 — Embed YouTube via Iframe
+#### ⚠️ Soal 11 — Gambar Responsif `(7/10)`
 
-**Deskripsi Kasus:**
-Iframe digunakan untuk menanamkan dokumen eksternal seperti YouTube.
+**Jawaban:**
+```html
+<img src="./Indonesia Nature.jpg" alt="Foto Pantai" width="50%" />
+```
 
-**Spesifikasi Input:**
-URL YouTube embed: `https://www.youtube.com/embed/xyz`
+**Analisis:**
+- ✅ `width="50%"` menggunakan persentase sesuai constraint
+- ✅ `alt="Foto Pantai"` sesuai spesifikasi aksesibilitas
+- ❌ **Nama file tidak sesuai spesifikasi.** Soal mewajibkan `pemandangan.jpg`, jawaban menggunakan `Indonesia Nature.jpg`. Gambar tidak akan tampil karena path salah
+- ✅ Logika dan atribut HTML sudah benar secara teknis
 
-**Spesifikasi Output:**
-Bingkai dimensi `500x500` menampilkan konten dari server YouTube di dalam halaman.
-
-**Constraint:**
-Wajib menggunakan atribut iframe yang valid.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Kode HTML disisipkan | Player YouTube fungsional di lokal layar |
+**Pengurangan:** -3 (nama file tidak sesuai spesifikasi input)
 
 ---
 
-### Soal 16 — Tabel dengan Rowspan
+#### ⚠️ Soal 12 — Responsive Image dengan `<picture>` `(8/10)`
 
-**Deskripsi Kasus:**
-Tabel kompleks seringkali membutuhkan manipulasi baris untuk data repetitif. Gabungkan sel secara vertikal.
+**Jawaban:**
+```html
+<picture>
+  <source media="(max-width: 500px)" srcset="kucing_kecil.jpg" />
+  <img src="./kucing_besar.jpg" alt="default images" />
+</picture>
+```
 
-**Spesifikasi Input:**
-- Header kolom: `"Divisi"`, `"Nama"`
-- Baris 1: IT, Budi
-- Baris 2: IT, Joko
+**Analisis:**
+- ✅ Struktur `<picture>` + `<source>` + `<img>` fallback benar
+- ✅ Media query `(max-width: 500px)` sesuai spesifikasi
+- ⚠️ Nama file berbeda dengan spesifikasi: soal minta `kucing-kecil.png` (hyphen, .png), jawaban `kucing_kecil.jpg` (underscore, .jpg). Logika HTML sudah benar
+- ✅ Tag fallback `<img>` hadir
 
-**Spesifikasi Output:**
-Sel kata `"IT"` menyatu membentang ke bawah untuk mengapit Budi dan Joko.
-
-**Constraint:**
-Gunakan properti `rowspan` yang terhitung benar.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Tabel statis | Border tabel menembus 2 tinggi baris di kolom Divisi |
+**Pengurangan:** -2 (inkonsistensi nama file)
 
 ---
 
-### Soal 17 — Tabel dengan `<thead>`, `<tbody>`, `<tfoot>`
+#### ⚠️ Soal 13 — Audio Multi-Format `(7/10)`
 
-**Deskripsi Kasus:**
-Struktur tabel enterprise wajib membedakan ruang lingkup data header, badan, dan catatan kaki.
+**Jawaban:**
+```html
+<audio controls>
+  <source src="./dj_html.mp3" type="audio/mp3" />
+  <source src="./dj_html_weba.weba" type="audio/weba" />
+  YOUR BROWSER DOESNT SUPPORT THE AUDIO
+</audio>
+```
 
-**Spesifikasi Input:**
-Kolom judul, baris rincian barang, dan baris `"Total Biaya"`.
+**Analisis:**
+- ✅ `controls` hadir, UI play/pause tersedia
+- ✅ Tidak ada `autoplay` (constraint terpenuhi)
+- ✅ Dua format source dicantumkan
+- ✅ Fallback text untuk browser yang tidak support
+- ❌ MIME type `type="audio/weba"` tidak valid. Format yang benar adalah `type="audio/webm"`
+- ❌ Nama file `dj_html.mp3` dan `dj_html_weba.weba` tidak sesuai spesifikasi (`lagu.mp3` dan `lagu.webm`)
 
-**Spesifikasi Output:**
-Struktur DOM yang bersih. Meskipun letak `<tfoot>` ditulis di tengah struktur DOM, browser tetap merendernya di posisi akhir bawah tabel.
-
-**Constraint:**
-Wajib membungkus *rows* menggunakan tag `<thead>`, `<tbody>`, dan `<tfoot>`.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Elemen `tfoot` didefinisikan | Posisi total stabil di paling bawah susunan data |
-
----
-
-### Soal 18 — Gambar Semantik dengan `<figure>` dan `<figcaption>`
-
-**Deskripsi Kasus:**
-Konten ilustrasi harus dapat berdiri sendiri beserta keterangannya dan tidak terpisahkan secara semantik.
-
-**Spesifikasi Input:**
-- File gambar: `grafik.jpg`
-- Teks keterangan: `"Grafik Penjualan 2025"`
-
-**Spesifikasi Output:**
-Browser mendeteksi kesatuan gambar dan teks secara semantis.
-
-**Constraint:**
-- Hindari penggunaan `<div class="gambar">`.
-- Gunakan dua tag semantik HTML5 khusus gambar dan caption.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Tag pembungkus | Screen reader membaca relasi gambar dan caption-nya |
+**Pengurangan:** -3 (nama file salah, MIME type tidak valid)
 
 ---
 
-### Soal 19 — Accordion Tanpa JavaScript
+#### ✅ Soal 14 — Video Autoplay Muted `(10/10)`
 
-**Deskripsi Kasus:**
-Implementasikan tag interaktif bawaan browser untuk antarmuka *Accordion/Toggle* tanpa bantuan JavaScript.
+**Jawaban:**
+```html
+<video muted width="800px" autoplay>
+  <source src="trailer.mp4" />
+</video>
+```
 
-**Spesifikasi Input:**
-- Judul klik: `"Baca Syarat"`
-- Teks isi: `"Anda harus patuh aturan."`
-
-**Spesifikasi Output:**
-Teks isi tersembunyi secara default. Muncul hanya saat tulisan `"Baca Syarat"` diklik.
-
-**Constraint:**
-Gunakan tag `<details>` beserta elemen pendukungnya.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Klik pada panah kecil | Kotak membesar, teks rahasia terekspos |
+**Analisis:**
+- ✅ Atribut `autoplay` hadir
+- ✅ Atribut `muted` hadir (wajib oleh browser modern agar autoplay bekerja)
+- ✅ `width="800px"` sesuai spesifikasi
+- ✅ File `trailer.mp4` sesuai spesifikasi
 
 ---
 
-### Soal 20 — Konfigurasi Form Action & Method
+#### ✅ Soal 15 — Embed YouTube via Iframe `(10/10)`
 
-**Deskripsi Kasus:**
-Form membutuhkan definisi spesifik ke mana data disalurkan dan bagaimana metodologinya.
+**Jawaban:**
+```html
+<iframe
+  src="https://www.youtube.com/embed/xyz"
+  frameborder="0"
+  width="500px"
+  height="500px"
+></iframe>
+```
 
-**Spesifikasi Input:**
-- Form profil pengguna
-- Target URL pengiriman: `/submit-profile`
-- Mode transfer: via Payload Body (tidak terekspos di URL bar)
-
-**Spesifikasi Output:**
-Objek form yang terhubung.
-
-**Constraint:**
-Sesuaikan nilai atribut `action` dan `method` dengan tepat.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Tombol Submit form ditekan | Browser memposting request body (POST) ke path `/submit-profile` |
+**Analisis:**
+- ✅ URL embed YouTube sesuai spesifikasi
+- ✅ Dimensi `500x500` sesuai spesifikasi
+- ✅ `frameborder="0"` untuk tampilan bersih
+- ✅ Semua atribut iframe valid
 
 ---
 
-## BAGIAN C — Lanjutan HTML Form & Input *(Medium to Hard)*
+#### ✅ Soal 16 — Tabel dengan Rowspan `(10/10)`
+
+**Jawaban:**
+```html
+<table border="1px solid black">
+  <tr>
+    <th>DIVISI</th>
+    <th>NAMA</th>
+  </tr>
+  <tr>
+    <td rowspan="2">IT</td>
+    <td>Budi</td>
+  </tr>
+  <tr>
+    <td>Joko</td>
+  </tr>
+</table>
+```
+
+**Analisis:**
+- ✅ `rowspan="2"` pada sel IT dengan nilai yang tepat (mencakup 2 baris: Budi dan Joko)
+- ✅ Header `DIVISI` dan `NAMA` sesuai spesifikasi
+- ✅ Struktur tabel valid dan ter-render dengan benar
 
 ---
 
-### Soal 21 — Label & Input Aksesibel
+#### ⚠️ Soal 17 — Tabel dengan `<thead>`, `<tbody>`, `<tfoot>` `(7/10)`
 
-**Deskripsi Kasus:**
-Aksesibilitas interaktif form sangat bergantung pada teks penanda (Label) yang terkait secara persis ke inputnya.
+**Jawaban:**
+```html
+<table border="1px solid black">
+  <thead>
+    <tr><th rowspan="3">Kolom Judul</th></tr>
+  </thead>
+  <tbody>
+    <tr><td rowspan="3" colspan="3">Baris Rincian Barang</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><td rowspan="3">Total Biaya</td></tr>
+  </tfoot>
+</table>
+```
 
-**Spesifikasi Input:**
-Teks `"Klik Saya"`, diikuti oleh elemen input teks.
+**Analisis:**
+- ✅ Tiga tag semantik `<thead>`, `<tbody>`, `<tfoot>` digunakan
+- ✅ Konten di setiap bagian sesuai konteks: judul, rincian, total
+- ⚠️ Penggunaan `rowspan="3"` pada `<thead>` dan `<tfoot>` tidak diperlukan dan **tidak logis** karena hanya ada satu baris di masing-masing section — tidak ada baris tambahan untuk di-span. Ini menunjukkan misunderstanding pada rowspan
+- ⚠️ `colspan="3"` pada tbody tidak didukung struktur kolom yang ada (hanya 1 kolom di thead)
 
-**Spesifikasi Output:**
-Ketika kursor mengklik persis di atas teks `"Klik Saya"`, elemen input teks di sebelahnya langsung terfokus dan kursor berkedip di dalamnya.
-
-**Constraint:**
-- Wajib menggunakan atribut `for` pada Label yang **sama identik** dengan atribut `id` pada Input.
-- Dilarang hanya sekadar membungkus input di dalam label.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| User klik pada Label teks | Input box menjadi *active/focused* |
-
----
-
-### Soal 22 — Radio Button Mutual Exclusive
-
-**Deskripsi Kasus:**
-Sistem formulir pilihan ganda di mana pengguna secara mutlak hanya boleh memilih **satu** opsi tunggal (*Mutual Exclusive*).
-
-**Spesifikasi Input:**
-Opsi pembayaran: `"Kartu Kredit"`, `"Transfer Bank"`, `"E-Wallet"`
-
-**Spesifikasi Output:**
-Tiga bulatan opsi. Memilih opsi satu akan me-reset ceklis pada opsi yang sudah dipilih sebelumnya.
-
-**Constraint:**
-- Wajib menggunakan input radio.
-- Kunci utamanya adalah atribut `name` harus di-set sama pada semua opsi.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Klik Radio 1, lalu klik Radio 2 | Status *checked* pindah ke Radio 2, Radio 1 kosong |
+**Pengurangan:** -3 (rowspan dan colspan tidak tepat secara konteks)
 
 ---
 
-### Soal 23 — Validasi Form HTML5 Native
+#### ✅ Soal 18 — Gambar Semantik dengan `<figure>` `(10/10)`
 
-**Deskripsi Kasus:**
-Pembuatan formulir registrasi membutuhkan validasi pengisian di sisi front-end sebelum dikirimkan ke server.
+**Jawaban:**
+```html
+<figure>
+  <img src="grafik.jpg" alt="Grafik" />
+  <figcaption>Grafik Penjualan 2025</figcaption>
+</figure>
+```
 
-**Spesifikasi Input:**
-Kotak input alamat Email.
-
-**Spesifikasi Output:**
-Jika kosong dan tombol daftar ditekan, peramban menampilkan alert balon pop-up: *"Please fill out this field"*. Format juga harus berjenis email yang valid.
-
-**Constraint:**
-Terapkan atribut validasi bawaan HTML5 dan tipe spesifik input.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Input di-kosongkan dan di-submit | Event pengiriman form digagalkan browser dan error ter-trigger |
+**Analisis:**
+- ✅ `<figure>` sebagai pembungkus semantik
+- ✅ `<figcaption>` dengan teks `"Grafik Penjualan 2025"` sesuai spesifikasi
+- ✅ Nama file dan alt sesuai
+- ✅ Tidak menggunakan `<div class="gambar">`
 
 ---
 
-### Soal 24 — Date Picker dengan Batasan Rentang
+#### ✅ Soal 19 — Accordion Tanpa JavaScript `(10/10)`
 
-**Deskripsi Kasus:**
-Batasi kebebasan memilih pengguna pada kalender agar jadwal yang tidak masuk akal tidak direkam sistem.
+**Jawaban:**
+```html
+<details>
+  <summary>Baca Syarat</summary>
+  <p>Anda harus patuh aturan</p>
+</details>
+```
 
-**Spesifikasi Input:**
-- Input untuk jadwal `"Pemesanan Tiket"`
-- Rentang yang diizinkan: `2026-05-01` s.d. `2026-05-31`
+**Analisis:**
+- ✅ `<details>` sebagai tag accordion native HTML
+- ✅ `<summary>` sebagai trigger klik dengan teks `"Baca Syarat"`
+- ✅ Konten tersembunyi secara default dan muncul saat diklik
+- ✅ Tanpa JavaScript sama sekali
 
-**Spesifikasi Output:**
-Elemen *Date-Picker* muncul. Tanggal di luar batasan akan tampak redup (*greyed-out*) dan tidak bisa diseleksi.
-
-**Constraint:**
-Manfaatkan kombinasi atribut `min` dan `max` spesifik pada tipe `date`.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| User klik ikon kalender, bulan Juni terbuka | Tidak ada opsi tanggal bulan Juni yang dapat ditekan |
+> **Catatan:** Teks isi sedikit berbeda: spesifikasi `"Anda harus patuh aturan."` vs jawaban `"Anda harus patuh aturan"` (tanpa titik). Ini sangat minor.
 
 ---
 
-### Soal 25 — File Upload dengan Enctype
-
-**Deskripsi Kasus:**
-Mengunggah berkas multimedia memerlukan perubahan krusial pada deklarasi parameter Form.
-
-**Spesifikasi Input:**
-Form dengan satu tombol unggah dokumen (file chooser).
-
-**Spesifikasi Output:**
-Jendela eksplorer lokal komputer terbuka jika di klik. Data biner dikemas dan dikirim tuntas secara mutlak utuh.
-
-**Constraint:**
-- Form pengunggah wajib mengatur konfigurasi `enctype` secara presisi.
-- Tipe form method harus tepat.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Pilih foto `"KTP.png"`, Submit | Payload HTTP yang ter-request via `multipart/form-data` |
+### BAGIAN C — Lanjutan HTML Form & Input
 
 ---
 
-### Soal 26 — Autocomplete dengan `<datalist>`
+#### ✅ Soal 20 — Konfigurasi Form Action & Method `(10/10)`
 
-**Deskripsi Kasus:**
-Tampilan dropdown opsi pilihan konvensional kurang fungsional jika opsinya sangat panjang. Fitur rekomendasi (*Autocomplete*) memecahkan masalah ini.
+**Jawaban:**
+```html
+<form action="/submit-profile" method="post">
+  <button type="submit">pencet aku</button>
+</form>
+```
 
-**Spesifikasi Input:**
-- Kotak teks: `"Asal Sekolah"`
-- Data rekomendasi: `"SDN 1"`, `"SMP 2"`, `"SMA 3"`
-
-**Spesifikasi Output:**
-Saat user mulai mengetik huruf `"S"`, kotak teks memunculkan ketiga saran *dropdown* list yang bisa diseleksi.
-
-**Constraint:**
-Gunakan tag relasional `<datalist>` dengan koneksi ID.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Ketik `"SMA"` pada kolom | Rekomendasi `"SMA 3"` mem-filter dan dapat langsung diklik masuk |
+**Analisis:**
+- ✅ `action="/submit-profile"` sesuai spesifikasi
+- ✅ `method="post"` untuk transfer via Payload Body (tidak terekspos di URL)
+- ✅ Tombol submit hadir
 
 ---
 
-### Soal 27 — Hidden Input Field
+#### ✅ Soal 21 — Label & Input Aksesibel `(10/10)`
 
-**Deskripsi Kasus:**
-Terkadang server mewajibkan pencantuman *tracking identifier* yang disisipkan di Form secara tersembunyi, agar tidak merusak antarmuka pengguna.
+**Jawaban:**
+```html
+<label for="soal_21">Klik Saya</label>
+<input type="text" name="soal_21" id="soal_21" />
+```
 
-**Spesifikasi Input:**
-- Parameter: `token_id`
-- Nilai default: `ABX123`
-
-**Spesifikasi Output:**
-Tidak terlihat kotak apapun pada antarmuka web. Namun parameter dikirim secara pasif saat *form submission*.
-
-**Constraint:**
-Implementasikan atribut input `type` dan nilai default yang tepat.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| User klik form submit | URL/Body Payload menyertakan `&token_id=ABX123` tanpa user input secara manual |
+**Analisis:**
+- ✅ `for="soal_21"` pada label identik dengan `id="soal_21"` pada input
+- ✅ Klik pada label akan mem-fokus input (constraint terpenuhi)
+- ✅ Input tidak dibungkus di dalam label (constraint terpenuhi)
+- ✅ Teks label `"Klik Saya"` sesuai spesifikasi
 
 ---
 
-### Soal 28 — Validasi Pattern Regex pada Input Tel
+#### ✅ Soal 22 — Radio Button Mutual Exclusive `(10/10)`
 
-**Deskripsi Kasus:**
-Format nomor telepon secara internasional bervariasi luas. Klien ini mengharuskan format statis angka telepon sepanjang **11 hingga 13 digit**. Validasi menggunakan Regex murni HTML.
+**Jawaban:**
+```html
+<input type="radio" name="soal_22" id="kartu_kredit" />
+<label for="kartu_kredit">Kartu Kredit</label>
+<input type="radio" name="soal_22" id="transfer_bank" />
+<label for="transfer_bank">Transfer Bank</label>
+<input type="radio" name="soal_22" id="e-wallet" />
+<label for="e-wallet">E-Wallet</label>
+```
 
-**Spesifikasi Input:**
-Box isian nomor kontak darurat.
-
-**Spesifikasi Output:**
-Jika input memuat selain rentang angka (misal `"ab123"` atau 9 angka saja), HTML mencegah submission.
-
-**Constraint:**
-- Tambahkan pola Regular Expression di dalam atribut `pattern` pada input type `tel`.
-- *Hint: Pattern Regex numerik berantai.*
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| `"08123456789"` | Valid sukses |
-| `"ab123"` atau 9 digit | Submission dicegah browser |
+**Analisis:**
+- ✅ Semua radio button memiliki `name="soal_22"` yang sama → mutual exclusive terpenuhi
+- ✅ Tiga opsi sesuai spesifikasi
+- ✅ Setiap radio berelasi dengan label melalui `for`/`id`
 
 ---
 
-### Soal 29 — Grouping Form dengan `<fieldset>` dan `<legend>`
+#### ⚠️ Soal 23 — Validasi Form HTML5 Native `(7/10)`
 
-**Deskripsi Kasus:**
-Pengelompokan visual dan fungsional bagian form wajib menggunakan kotak penegas batas border.
+**Jawaban:**
+```html
+<form action="#">
+  <label for="email">Email: </label>
+  <input type="email" name="email" id="email"
+    required="Please fill out this field" /><br />
+  <button type="submit" id="email" name="email">Submit Email</button>
+</form>
+```
 
-**Spesifikasi Input:**
-- Satu blok grup berjudul `"Informasi Detail"`
-- Di dalamnya memuat 1 input textbox
+**Analisis:**
+- ✅ `type="email"` memvalidasi format email secara native
+- ✅ `required` hadir untuk mencegah submit saat kosong
+- ❌ **`required` adalah boolean attribute** — nilai `"Please fill out this field"` tidak berpengaruh. Browser mengabaikan nilai tersebut dan menampilkan pesan default browser. Untuk custom message diperlukan JavaScript (yang di luar scope HTML murni)
+- ❌ **Duplikasi `id="email"`** antara `<input>` dan `<button>`. `id` harus unik dalam satu dokumen. Ini invalid HTML dan bisa menyebabkan bug pada screen reader dan JavaScript DOM selection
 
-**Spesifikasi Output:**
-Kotak garis tepi melingkari inputan teks, dan di garis tepi bagian atas menyempil teks menyatu `"Informasi Detail"`.
-
-**Constraint:**
-- Tag `div` / CSS dilarang digunakan.
-- Wajib menggunakan tag Semantic HTML5 Form untuk mengikat elemen.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Struktur Tag Grouping dan Tag Judul Grouping | UI form terkotak-kotak secara rapi |
+**Pengurangan:** -3 (misunderstanding boolean attribute required + duplikasi id)
 
 ---
 
-### Soal 30 — Slider Range dengan Step Diskrit
+#### ✅ Soal 24 — Date Picker dengan Batasan Rentang `(10/10)`
 
-**Deskripsi Kasus:**
-Elemen kontrol input angka Slider dapat diinstruksikan untuk tidak bergerak bebas secara inkremental, melainkan melompat nilai mutlak yang ditetapkan (misal slider volume melompat per 25%).
+**Jawaban:**
+```html
+<label for="tiket">Pemesanan Tiket: </label>
+<input type="date" name="tiket" id="tiket" max="2026-05-31" min="2026-05-01" />
+```
 
-**Spesifikasi Input:**
-- Slider indikator
-- Range: `0` sampai maksimum `100`
-
-**Spesifikasi Output:**
-Saat slider digeser, nilainya hanya dapat berhenti di titik loncatan diskrit: **0, 25, 50, 75, 100**. Slider tidak akan pernah bernilai `"13"` atau `"30"`.
-
-**Constraint:**
-Pemanfaatan ketat atribut `step` pada konfigurasi tag `range`.
-
-**Contoh Input/Output:**
-
-| Input | Output |
-|---|---|
-| Klik slider lalu drag 1mm ke kanan | Poin slider langsung "meloncat" menempel di 25 |
+**Analisis:**
+- ✅ `type="date"` menampilkan date picker native
+- ✅ `min="2026-05-01"` dan `max="2026-05-31"` sesuai spesifikasi
+- ✅ Tanggal di luar rentang akan greyed-out
+- ✅ Label terhubung dengan `for`/`id`
 
 ---
 
-> **Selamat Mengerjakan.**
-> Pastikan seluruh logika Form Validation HTML terapan mampu berjalan sempurna **tanpa intervensi JavaScript sedikitpun**.
+#### ⚠️ Soal 25 — File Upload dengan Enctype `(8/10)`
+
+**Jawaban:**
+```html
+<form action="" enctype="multipart/form-data" method="post">
+  <input type="file" id="soal_25" name="soal_25" /><br />
+  <button type="submit" id="soal_25" name="soal_25">Submit</button>
+</form>
+```
+
+**Analisis:**
+- ✅ `enctype="multipart/form-data"` benar untuk file upload
+- ✅ `method="post"` tepat
+- ✅ `type="file"` menampilkan file chooser
+- ❌ **Duplikasi `id="soal_25"`** pada `<input>` dan `<button>`. Sama seperti soal 23, ini invalid HTML
+
+**Pengurangan:** -2 (duplikasi id)
+
+---
+
+#### ⚠️ Soal 26 — Autocomplete dengan `<datalist>` `(8/10)`
+
+**Jawaban:**
+```html
+<label for="soal_26">Asal Sekolah: </label>
+<input list="sekolah" id="soal_26" name="soal_26" />
+<datalist id="sekolah">
+  <option value="SDN 1" id="soal_26">SDN 001</option>
+  <option value="SMP 2">SMP 002</option>
+  <option value="SMA 3">SMA 003</option>
+</datalist>
+```
+
+**Analisis:**
+- ✅ Koneksi `list="sekolah"` ↔ `id="sekolah"` pada datalist benar
+- ✅ Tiga opsi rekomendasi sesuai spesifikasi
+- ❌ `id="soal_26"` pada elemen `<option>` tidak diperlukan dan menyebabkan **duplikasi id** dengan input di atas
+- ✅ Fungsionalitas autocomplete akan berjalan dengan baik
+
+**Pengurangan:** -2 (id tidak valid pada option + duplikasi id)
+
+---
+
+#### ❌ Soal 27 — Hidden Input Field `(4/10)`
+
+**Jawaban:**
+```html
+<form action="" method="post">
+  <label for="hidden_input">Token ID: </label>
+  <input type="text" value="ABX123" id="hidden_input" name="hidden_input" required />
+  <button type="submit">Submit</button>
+</form>
+```
+
+**Analisis:**
+- ❌ **Kesalahan fundamental:** Menggunakan `type="text"` bukan `type="hidden"`. Field dengan `type="text"` **terlihat** oleh pengguna, bertentangan langsung dengan constraint: *"Tidak terlihat kotak apapun pada antarmuka web"*
+- ❌ Penambahan `<label>` dan `required` pada hidden field tidak masuk akal secara konsep — hidden input tidak memerlukan label atau validasi wajib
+- ✅ Nilai `value="ABX123"` sudah benar
+- **Solusi benar:** `<input type="hidden" name="token_id" value="ABX123" />`
+
+**Pengurangan:** -6 (kesalahan tipe input yang bersifat fundamental)
+
+---
+
+#### ✅ Soal 28 — Validasi Pattern Regex pada Input Tel `(10/10)`
+
+**Jawaban:**
+```html
+<input type="tel" pattern="^\d{11,13}$" required id="phone" name="phone" />
+<input type="submit" value="Submit" />
+```
+
+**Analisis:**
+- ✅ `type="tel"` sesuai constraint
+- ✅ `pattern="^\d{11,13}$"` — regex benar untuk validasi 11–13 digit angka
+- ✅ `required` mencegah field kosong disubmit
+- ✅ Submission akan diblokir browser untuk input tidak valid
+
+---
+
+#### ⚠️ Soal 29 — Grouping Form dengan `<fieldset>` `(8/10)`
+
+**Jawaban:**
+```html
+<fieldset>
+  <legend>Informasi Detail</legend>
+  <label for="username">Username: </label>
+  <input type="text" id="username" name="username" /><br />
+  <label for="password">Password: </label>
+  <input type="password" id="password" name="password" /><br />
+  <input type="submit" value="Submit" />
+</fieldset>
+```
+
+**Analisis:**
+- ✅ `<fieldset>` + `<legend>` digunakan dengan benar
+- ✅ Teks legend `"Informasi Detail"` sesuai spesifikasi
+- ✅ Tidak menggunakan `<div>` atau CSS
+- ⚠️ Soal hanya mewajibkan **1 input textbox**, namun jawaban menambahkan input password dan submit button. Meskipun ini tidak salah secara teknis, ini melebihi scope dan dapat mengurangi nilai pada ujian yang ketat
+
+**Pengurangan:** -2 (melebihi spesifikasi dengan input tambahan yang tidak diminta)
+
+---
+
+#### ✅ Soal 30 — Slider Range dengan Step Diskrit `(10/10)`
+
+**Jawaban:**
+```html
+<label for="slider">Indikator: </label>
+<input type="range" value="50" step="25" id="slider" name="slider" min="0" max="100" />
+```
+
+**Analisis:**
+- ✅ `type="range"` benar
+- ✅ `min="0"` dan `max="100"` sesuai spesifikasi
+- ✅ `step="25"` membuat titik diskrit: 0, 25, 50, 75, 100
+- ✅ `value="50"` sebagai nilai awal
+- ✅ Label berelasi dengan `for`/`id`
+
+---
+
+## Ringkasan Temuan & Rekomendasi
+
+### 🔴 Kesalahan Kritis (perlu diperbaiki)
+
+| No | Soal | Masalah |
+|---|---|---|
+| 10 | Block vs Inline | Menggunakan `<diskon>` (unknown tag) alih-alih `<span>` |
+| 27 | Hidden Input | Menggunakan `type="text"` bukan `type="hidden"`, field terlihat oleh pengguna |
+
+### 🟡 Peringatan Sedang (perlu diperhatikan)
+
+| No | Soal | Masalah |
+|---|---|---|
+| 9 | Nested List | Teks `"Kendaraan"` sebagai text node langsung di `<ul>` (invalid HTML, harus dalam `<li>`) |
+| 11 | Gambar Responsif | Nama file `Indonesia Nature.jpg` tidak sesuai spesifikasi `pemandangan.jpg` |
+| 13 | Audio | MIME type `audio/weba` salah (seharusnya `audio/webm`), nama file tidak sesuai |
+| 17 | Tabel Semantik | Nilai `rowspan` tidak logis pada thead dan tfoot |
+| 23 | Validasi Form | `required` adalah boolean attribute, tidak menerima custom string |
+| 23 & 25 | Form | Duplikasi `id` antara input dan button (invalid HTML) |
+
+### 🟢 Yang Dikerjakan dengan Baik
+
+- Penguasaan dasar HTML5 boilerplate (soal 1)
+- Penggunaan semantic formatting tags (soal 3)
+- HTML Entities (soal 4)
+- Anchor navigation / bookmark (soal 7)
+- Radio button mutual exclusive (soal 22)
+- Date picker dengan min/max (soal 24)
+- Regex pattern validation pada input tel (soal 28)
+- Accordion native HTML tanpa JavaScript (soal 19)
+- Video autoplay muted (soal 14)
+
+---
+
+> *Penilaian ini bersifat objektif berdasarkan kesesuaian terhadap spesifikasi soal, validitas HTML5, dan kelengkapan constraint yang diberikan.*
